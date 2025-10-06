@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Review Sportive - Sports & Bikes</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    p {
+      color: #7f8c8d;
+      font-size: 16px;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+      margin: 10px 5px;
+      display: inline-block;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+      background: linear-gradient(135deg, #ee5a52, #ff6b6b);
+    }
+
+    #followSection {
+      display: none;
+    }
+
+    .sport-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #4ecdc4;
+      opacity: 0.7;
+    }
+
+    .fb-btn {
+      background: linear-gradient(135deg, #1877f2, #145dbf);
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+    }
+
+    .fb-btn:hover {
+      background: linear-gradient(135deg, #145dbf, #1877f2);
+    }
+
+    .ig-btn {
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      box-shadow: 0 4px 15px rgba(221, 42, 123, 0.3);
+    }
+
+    .ig-btn:hover {
+      background: linear-gradient(135deg, #dd2a7b, #f58529);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="sport-icon">🚴‍♂️</div>
+    <img src="your-logo.png" class="logo" alt="Sportive Logo" />
+    <h1>Review Sportive - Sports & Bikes</h1>
+    <p>We’d love your feedback! Click below to share your experience on Google.</p>
+
+    <button id="reviewBtn" onclick="openReview()">Give Review</button>
+
+    <div id="followSection">
+      <p>Thank you for your review! Stay connected with us:</p>
+      <button class="ig-btn" onclick="goToInstagram()">Follow on Instagram</button>
+      <button class="fb-btn" onclick="goToFacebook()">Follow on Facebook</button>
+    </div>
+  </div>
+
+  <script>
+    function openReview() {
+      const reviewWindow = window.open(
+        "https://g.page/r/CWeFC6xuOnmqEAI/review",
+        "_blank"
+      );
+
+      const checkClosed = setInterval(() => {
+        if (reviewWindow.closed) {
+          clearInterval(checkClosed);
+          document.getElementById("followSection").style.display = "block";
+          document.getElementById("reviewBtn").style.display = "none";
+        }
+      }, 1000);
+    }
+
+    function goToInstagram() {
+      window.open(
+        "https://www.instagram.com/sportive_nlb/?utm_source=qr&igsh=Ym81Z2gweDQ3aXQ5#",
+        "_blank"
+      );
+    }
+
+    function goToFacebook() {
+      window.open(
+        "https://www.facebook.com/profile.php?id=100086097725896&mibextid=ZbWKwL",
+        "_blank"
+      );
+    }
+  </script>
+</body>
+</html>
